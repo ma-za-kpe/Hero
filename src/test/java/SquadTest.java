@@ -76,7 +76,7 @@ public class SquadTest {
         String formerCause = squad.getCause();
         int formerId = squad.getId();
 
-        squad.update("Marvel", "protect Gotham");
+        squad.update("SCRUM", "protect crazy Gotham");
 
         assertEquals(formerId, squad.getId());
         assertNotEquals(formerName, squad.getName());
