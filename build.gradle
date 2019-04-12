@@ -26,6 +26,7 @@ dependencies {
     compile "com.sparkjava:spark-core:2.6.0"
     compile "com.sparkjava:spark-template-handlebars:2.5.5" //we'll need this for later!
     compile 'org.slf4j:slf4j-simple:1.7.21' //to ensure eas
+    compile group: 'org.apache.velocity', name: 'velocity', version: '1.7'
 }
 
 // In this section you declare where to find the dependencies of your project
