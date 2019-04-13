@@ -3,20 +3,19 @@
     <div class="col-sm">
     </div>
     <div class="col-sm">
-       <button type="submit" class="btn btn-default btn-lg font-weight-bold">Add Squad</button>
+       <a href="/add-form"><button type="submit" class="btn btn-default btn-lg">Add Squad</button></a>
     </div>
     <div class="col-sm">
     </div>
   </div>
 </div>
 
-<h1>Task list!</h1>
+<hr>
 
-<p>Add a new Task:</p>
+#foreach ($squad in $mySquad)
 
-<form action="/tasks" method="post">
-  <label for="description">Task Description</label>
-  <input id="description" name="description" type="text">
-
-  <button type="submit" class="btn btn-default">Add task</button>
-</form>52
+<ul>
+<li>$squad.name<li/>
+<li>$squad.cause<li/>
+</ul>
+#end

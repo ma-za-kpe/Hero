@@ -20,21 +20,32 @@ public class App {
 
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
+            ArrayList<Squad> squads = Squad.getAllSquad();
+            model.put("mySquad", squads);
             model.put("template", "templates/index.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+        //onclick button
+        get("/add-form", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            model.put("template", "templates/addform.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
         //get: show new post form
 
         //post: process new post form
-//        post("/posts/new", (request, response) -> { //URL to make new post on POST route
-//            Map<String, Object> model = new HashMap<>();
-//
-//            String content = request.queryParams("content");
-//            Post newPost = new Post(content);
-//            model.put("post", newPost);
-//            return new ModelAndView(model, "success.hbs");
-//        }, new VelocityTemplateEngine());
+        post("/addform", (request, response) -> { //URL to make new post on POST route
+            Map<String, Object> model = new HashMap<>();
+
+            String name = request.queryParams("name");
+            String cause = request.queryParams("cause");
+            Squad newSquad = new Squad(name, cause);
+            model.put("squads", newSquad);
+            model.put("template", "templates/success.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
 
         //get: show all posts
 //        get("/", (req, res) -> {
