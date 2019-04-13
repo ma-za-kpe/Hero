@@ -1,1 +1,1 @@
-web: ./build/install/hero/bin/hero
+web: java -jar target/Hero-1.0.0.jar
