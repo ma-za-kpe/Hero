@@ -4,7 +4,7 @@ public class Hero {
     private String name;
     private String specialSkill;
     private String weakness;
-    private int age;
+    private int age = 0;
     private static ArrayList<Hero> instances = new ArrayList<>(); // I’m new. When do I get created?
     private int id;
 

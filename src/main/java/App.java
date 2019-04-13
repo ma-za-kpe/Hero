@@ -21,7 +21,9 @@ public class App {
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             ArrayList<Squad> squads = Squad.getAllSquad();
+            ArrayList<Hero> heroes = Hero.getAllHeroes();
             model.put("mySquad", squads);
+            model.put("myHero", heroes);
             model.put("template", "templates/index.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
@@ -47,14 +49,25 @@ public class App {
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
-        //get: show all posts
-//        get("/", (req, res) -> {
-//            Map<String, Object> model = new HashMap<>();
-//            ArrayList<Squad> squads = Squad.getAllSquad();
-//            model.put("squads", squads);
-//
-//            return new ModelAndView(model, "index.vtl");
-//        }, new VelocityTemplateEngine());
+        //onclick button add hero
+        get("/add-hero-form", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            model.put("template", "templates/addHeroform.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+        //post: process new hero form
+        post("/addHeroForm", (request, response) -> { //URL to make new post on POST route
+            Map<String, Object> model = new HashMap<>();
+            String name = request.queryParams("name");
+            String skill = request.queryParams("skill");
+            String weakness = request.queryParams("weakness");
+            String age = request.queryParams("age");
+            Hero newHero = new Hero(name, skill, weakness, Integer.parseInt(age));
+            model.put("heroes", newHero);
+            model.put("template", "templates/success.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
 
         //get: show an individual post
 
