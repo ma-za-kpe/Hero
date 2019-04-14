@@ -24,6 +24,7 @@ public class App {
             ArrayList<Hero> heroes = Hero.getAllHeroes();
             model.put("mySquad", squads);
             model.put("myHero", heroes);
+
             model.put("template", "templates/index.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
