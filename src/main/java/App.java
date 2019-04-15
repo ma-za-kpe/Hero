@@ -44,6 +44,12 @@ public class App {
 
             String name = request.queryParams("name");
             String cause = request.queryParams("cause");
+
+            request.session().attribute("name", name);
+            request.session().attribute("cause", cause);
+            model.put("name", name);
+            model.put("cause", cause);
+
             Squad newSquad = new Squad(name, cause);
             model.put("squads", newSquad);
             model.put("template", "templates/success.vtl");
@@ -64,6 +70,16 @@ public class App {
             String skill = request.queryParams("skill");
             String weakness = request.queryParams("weakness");
             String age = request.queryParams("age");
+
+            request.session().attribute("name", name);
+            request.session().attribute("skill", skill);
+            request.session().attribute("weakness", weakness);
+            request.session().attribute("age", age);
+            model.put("name", name);
+            model.put("skill", skill);
+            model.put("weakness", weakness);
+            model.put("age", age);
+
             Hero newHero = new Hero(name, skill, weakness, Integer.parseInt(age));
             model.put("heroes", newHero);
             model.put("template", "templates/success.vtl");
