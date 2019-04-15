@@ -6,12 +6,14 @@ public class Squad {
     private String cause;
     private static ArrayList<Squad> instances = new ArrayList<>(); // I’m new. When do I get created?
     private int id;
+    private ArrayList<Hero> heroes;
 
     public Squad(String name, String cause) {
         this.name = name;
         this.cause = cause;
         instances.add(this);
         this.id = instances.size();
+        heroes = new ArrayList<Hero>();
     }
 
     public String getName() {
@@ -38,6 +40,14 @@ public class Squad {
     public static Squad findById(int id){
         return instances.get(id-1); //why minus 1? See if you can figure it out.
         //id-1 stands for the index of the element in the arraylist while id is the element in the array(the instance.size())
+    }
+
+    public ArrayList<Hero> getHeroes() {
+        return heroes;
+    }
+
+    public void addHero(Hero hero) {
+        heroes.add(hero);
     }
 
     public void update(String name, String cause) {
