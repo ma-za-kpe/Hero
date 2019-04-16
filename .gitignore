@@ -42,3 +42,5 @@ out/
 .idea
 .idea/
 !gradle-wrapper.jar
+build/
+.gradle/
