@@ -4,12 +4,6 @@ An app that allows you to recruit a well-balanced team of superheroes (or any ot
 ## PROJECT AUTHOR
 MAKU PAULINE MAZAKPE
 
-## BDD
-1. User enters a squad
-2. User enters heroes under that particular squad
-3. User enters another squad
-4. User enters heroes under that squad
-
 ## Technologies and frameworks used
 1. java 11
 2. spark core 2.12
@@ -21,6 +15,12 @@ MAKU PAULINE MAZAKPE
 1. Clone this repo
 2. Compile "gradle compileJava"
 3. Run cd to cd build/classes/main `java App`
+
+## BDD
+1. User enters a squad
+2. User enters heroes under that particular squad
+3. User enters another squad
+4. User enters heroes under that squad
 
 ## SCREENSHOTS
 
