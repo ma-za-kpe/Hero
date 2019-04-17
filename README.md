@@ -24,11 +24,9 @@ MAKU PAULINE MAZAKPE
 
 ## SCREENSHOTS
 
-![alt text](./images/encode.png)
+[![Screenshot-from-2019-04-17-09-00-31.png](https://i.postimg.cc/1XH4j7VS/Screenshot-from-2019-04-17-09-00-31.png)](https://postimg.cc/xNX0kRPp)
 
-![alt text](http://url/to/img.png)
-
-![alt text](http://url/to/img.png)
+[![Screenshot-from-2019-04-17-09-00-38.png](https://i.postimg.cc/fTRbbK03/Screenshot-from-2019-04-17-09-00-38.png)](https://postimg.cc/jCBTgycK)
 
 ## Testing
 
